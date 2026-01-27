@@ -1,0 +1,91 @@
+.countdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.loading {
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(79, 70, 229, 0.1);
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+.loading p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  max-width: 400px;
+  text-align: center;
+}
+
+.error h3 {
+  color: #dc2626;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.error p {
+  color: #991b1b;
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.countdown {
+  text-align: center;
+  max-width: 600px;
+}
+
+.countdown h2 {
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.time-display {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.reached {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.reached h2 {
+  color: white;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}

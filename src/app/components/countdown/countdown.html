@@ -1,0 +1,28 @@
+<div class="countdown-container">
+  @if (isLoading()) {
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Loading deadline...</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="error">
+      <h3>Error</h3>
+      <p>{{ error() }}</p>
+    </div>
+  }
+
+  @if (!isLoading() && !error() && secondsLeft() !== null) {
+    <div class="countdown">
+      @if (secondsLeft()! > 0) {
+        <h2>Seconds left to deadline:</h2>
+        <div class="time-display">{{ formattedTime() }}</div>
+      } @else {
+        <div class="reached">
+          <h2>Deadline Reached!</h2>
+        </div>
+      }
+    </div>
+  }
+</div>
