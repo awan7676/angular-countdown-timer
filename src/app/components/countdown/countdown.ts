@@ -63,17 +63,20 @@ export class CountdownComponent implements OnInit {
   }
 
   private formatTime(seconds: number): string {
-    const days = Math.floor(seconds / 86400);
-    const hours = Math.floor((seconds % 86400) / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
+    const SECONDS_PER_DAY = 86400;
+    const SECONDS_PER_HOUR = 3600;
+    const SECONDS_PER_MINUTE = 60;
 
-    const parts: string[] = [];
-    if (days > 0) parts.push(`${days}d`);
-    if (hours > 0) parts.push(`${hours}h`);
-    if (minutes > 0) parts.push(`${minutes}m`);
-    parts.push(`${secs}s`);
+    const days = Math.floor(seconds / SECONDS_PER_DAY);
+    const hours = Math.floor((seconds % SECONDS_PER_DAY) / SECONDS_PER_HOUR);
+    const minutes = Math.floor((seconds % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE);
+    const secs = seconds % SECONDS_PER_MINUTE;
 
-    return parts.join(' ');
+    return [
+      days > 0 && `${days}d`,
+      hours > 0 && `${hours}h`,
+      minutes > 0 && `${minutes}m`,
+      `${secs}s`
+    ].filter(Boolean).join(' ');
   }
 }
